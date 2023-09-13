@@ -1,7 +1,7 @@
 [![](https://raw.githubusercontent.com/DanielSgPz/React-Dizfrute/main/src/assets/img/logos/LOGO-DIZFRUTE.png)]()
 ¡Bienvenido al repositorio del proyecto de la tienda en línea "Dizfrute"! En este proyecto, he creado una aplicación web utilizando React para simular una tienda en línea de productos. A continuación, te describo las principales características y componentes desarrollados.
 # Funcionamiento
-<video width="854" height="480" controls>
+[![Video de Fuuncionamiento](funcionamiento.webm)](funcionamiento.webm)
   <source src="funcionamiento.webm" type="video/webm">
 </video>
 
