@@ -1,0 +1,98 @@
+[
+{
+    "id":"1",
+    "nombreProducto":"Banana Split",
+    "descripcion":"Plátano cubierto con helado de tres sabores, salsa de chocolate, salsa de fresa, nata montada, chispas de chocolate, virutas de nueces y una cereza.",
+    "categoria":"Helados",
+    "precio":7,
+    "imagen": "/productos/Bananasplit.jpg"
+  },
+  {
+    "id":"2",
+    "nombreProducto":"Sundae",
+    "descripcion":"Bola de helado cubiertas con una salsa dulce, de chocolate o fresa, y nata montada.",
+    "categoria":"Helados",
+    "precio":5,
+    "imagen": "/productos/Sundae-salsa.png"
+  },
+  {
+    "id":"3",
+    "nombreProducto":"Mixer Brownie",
+    "descripcion":"Base de helado de chocolate y se le agregan trozos de brownie.",
+    "categoria":"Helados",
+    "precio":4,
+    "imagen": "/productos/Mixer-brownie.png"
+  },
+  {
+    "id":"4",
+    "nombreProducto":"Cono Oreo",
+    "descripcion":"Cono de helado con galleta oreo",
+    "categoria":"Helados",
+    "precio":3,
+    "imagen": "/productos/Cono-Oreo.png"
+  },
+  {
+    "id":"5",
+    "nombreProducto":"Malteada arequipe",
+    "descripcion":"Se prepara con leche, helado de vainilla y arequipe.",
+    "categoria":"Malteadas",
+    "precio":6,
+    "imagen": "/productos/Malteada-Arequipe.png"
+  },
+  {
+    "id":"6",
+    "nombreProducto":"Malteada Oreo",
+    "descripcion":"Refréscate con una fría y cremosa malteada, hecha con leche, helado de vainilla y llévala con tu sabor favorito Oreo.",
+    "categoria":"Malteadas",
+    "precio":3,
+    "imagen": "/productos/Malteada-Oreo.png"
+  },
+  {
+    "id":"7",
+    "nombreProducto":"Malteada Chocolate",
+    "descripcion":"Malteada con helado de chocolate y chispas de chocolate",
+    "categoria":"Malteadas",
+    "precio":3.5,
+    "imagen": "/productos/Malteada-Chocolate.png"
+  },
+  {
+    "id":"8",
+    "nombreProducto":"Malteada Vainilla",
+    "descripcion":"Malteada con helado de vainilla y salsa de frutos rojos.",
+    "categoria":"Malteadas",
+    "precio":6.5,
+    "imagen": "/productos/Malteada-Vainilla.png"
+  },
+  {
+    "id":"9",
+    "nombreProducto":"Michelada Mexicana",
+    "descripcion":"Explosión de sabores y sensaciones, entre picantes y ácidos, ligeros y llena de frescor, con toques a lima, sal y cerveza rubia. ",
+    "categoria":"Micheladas",
+    "precio":7,
+    "imagen": "/productos/Michelada-Mexicana.png"
+  },
+  {
+    "id":"10",
+    "nombreProducto":"Michelada de tamarindo",
+    "descripcion":"Con tamarindo, chamoy, jicama y cerveza.",
+    "categoria":"Micheladas",
+    "precio":8,
+    "imagen": "/productos/Michelada-Tamarindo.jpg"
+  },
+  {
+    "id":"11",
+    "nombreProducto":"Michelada con Sriracha",
+    "descripcion":"Se caracteriza con su combinación de picante y dulce.",
+    "categoria":"Micheladas",
+    "precio":7.5,
+    "imagen": "/productos/Michelada-Siracha.jpg"
+  },
+  {
+    "id":"12",
+    "nombreProducto":"Michelada tradicional",
+    "descripcion":"La michelada tradicional se utiliza actualmente para acompañar comidas.",
+    "categoria":"Micheladas",
+    "precio":6.5,
+    "imagen": "/productos/Michelada-Tradicional.png"
+  }
+]
