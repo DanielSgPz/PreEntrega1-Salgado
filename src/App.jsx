@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-    <NavBar></NavBar>
+    <NavBar/>
     <ItemListContainer greeting="Bienvenido a Dizfrute"></ItemListContainer>
     </>
   )

@@ -1,6 +1,6 @@
 import React from "react";
 import DizfruteLogo from '../assets/img/logos/LOGO-DIZFRUTE.png'
-import CartWidget from "./CartWidget.JSX";
+import CartWidget from "./CartWidget";
 
 function NavBar(){
     return (
@@ -49,7 +49,7 @@ function NavBar(){
                 <div className="d-flex align-items-center">
                     <a className="link-secondary me-3" href="#">
                         <CartWidget />
-                        <span className="badge rounded-pill badge-notification bg-danger">1</span>
+                        
                     </a>
                 </div>
             </div>
