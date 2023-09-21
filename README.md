@@ -11,9 +11,16 @@ El componente NavBar es la barra de navegación de nuestra aplicación. Contiene
 
 ## ItemListContainer.jsx
 El componente ItemListContainer se encarga de mostrar un mensaje de saludo en la página. Este componente es reutilizable y puede recibir una prop llamada greeting para personalizar el mensaje de bienvenida.
+Tambien permite la carga de los productos en general y grupos de productos.
 
 ## CartWidget.jsx
 El componente CartWidget representa un ícono de carrito de compras. Se ha integrado con la librería Font Awesome para mostrar un ícono llamativo. Además, muestra una notificación de la cantidad de elementos en el carrito.
+
+## Itemlist
+Muestra con map los productos
+
+## Item
+Muestra un producto en particular
 
 ## Dependencias
 Hes utilizado las siguientes dependencias en el proyecto:
