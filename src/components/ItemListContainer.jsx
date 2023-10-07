@@ -1,34 +1,47 @@
 import React, { useEffect, useState } from "react";
-import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import productos from "../../productos.json"
+import {collection, getDocs, getFirestore, query, where} from "firebase/firestore"
+import ItemList from "./ItemList";
 
-function MockAPI(id) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (!id) {
-        resolve(productos);
-      } else {
-        const productosEncontrados = productos.filter((item) => {
-          return item.categoria === id; 
-        });
-        resolve(productosEncontrados);
-      }
-    }, 2000);
-  });
-}
+
 
 export default function ItemListContainer(props) {
 
-  const [newProductos, setProductos] = useState();
+  const [newProductos, setProductos] = useState([]);
   const { id } = useParams();
+  const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-      setProductos(null);
-      MockAPI(id).then((res) => setProductos(res));
-    }, [id]);
 
-    if (!newProductos) {
+  useEffect(() => {
+  const database = getFirestore();
+  const productsRef = collection(database, "productos");
+
+  if(!id){
+    getDocs(productsRef).then((snapshot) => {
+      if(snapshot.size !== 0){
+          const sortedCateg = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+          sortedCateg.sort((a, b) => a.nombreProducto.localeCompare(b.nombreProducto));
+          setProductos(sortedCateg);
+      }
+  })
+  }
+  else{
+    const db = getFirestore();
+    const q = query(collection(db, "productos"), where("categoria", "==", id));
+
+    getDocs(q).then((snapshot) => {
+      if(snapshot.size !== 0){
+        const sortedCateg = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        sortedCateg.sort((a, b) => a.id - b.id); 
+        setProductos(sortedCateg);
+      }else{
+          console.log("No se encontro datos");
+      }})
+
+  }
+  }, [id]);  
+
+    if (newProductos.length == 0) {
       return (
         <div className="text-center">
           <img src="/loading/loader.gif" alt="Loading..." />
