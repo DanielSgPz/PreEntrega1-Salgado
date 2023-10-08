@@ -36,18 +36,5 @@ export default function ItemCount({ stock, inicial, onAdd }) {
                 </div>
             </div>
             </>
-        /* 
-               <div className='Contador'>
-                   <div className='Controles'>
-                       <button onClick={decremento}> - </button>
-                       <h3>{cantidad}</h3>
-                       <button onClick={incremento}> + </button>
-                   </div>
-                   <div >
-                       <button className='escalar' onClick={() => onAdd(cantidad)} disabled={!stock}>
-                           Agregar al carrito
-                       </button>
-                   </div>
-              </div> */
     )
 }

@@ -1,23 +1,43 @@
 import { createContext, useState } from "react";
 
-export const CartContext = createContext( {cart: []});
+export const CartContext = createContext({ cart: [] });
 
-export const CartProvider = ({children}) => {
+export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [tot, setTotal] = useState(0)
     const [totQuantity, setTotQuantity] = useState(0)
 
-    const addItem = (item, quantity) => {
-        if(!isInCart(item.id)){
-            setCart(prev => [...prev, {...item, quantity}])
-            setTotQuantity(totQuantity + quantity)
-            const subtotal = (item.price * quantity)
-            setTotal(tot + subtotal)
-        } else {
-            <h1>El producto ya existe en el carrito</h1>
-        }
 
-    }
+    const addItem = (item, quantity) => {
+        if (!isInCart(item.id)) {
+          setCart((prev) => [...prev, { ...item, quantity }]);
+
+          const subtotal = item.precio * quantity;
+
+          setTotQuantity(totQuantity + quantity);
+          setTotal(tot + subtotal);
+         
+
+        } else {
+          const updatedCart = cart.map((cartItem) => {
+            if (cartItem.id === item.id) {
+              const newQuantity = cartItem.quantity + quantity;
+              const newSubtotal = item.precio * newQuantity;
+              setTotQuantity(totQuantity + quantity); 
+              setTotal(tot + newSubtotal); 
+              return {
+                ...cartItem,
+                quantity: newQuantity,
+              };
+            }
+            return cartItem;
+          });
+      
+          setCart(updatedCart);
+        }
+      };
+
+
 
     const removeItem = (itemId) => {
         const cartUpdated = cart.filter(prod => prod.id !== itemId)
@@ -25,18 +45,18 @@ export const CartProvider = ({children}) => {
 
         if (cartUpdated.length === 0) {
             clearCart();
-          }else{
-                const newTotal = cartUpdated.reduce((accumulator, item) => {
-                    return accumulator + item.price * item.quantity;
-                }, 0);
-            
-                setTotal(newTotal);
+        } else {
+            const newTotal = cartUpdated.reduce((accumulator, item) => {
+                return accumulator + item.precio * item.quantity;
+            }, 0);
 
-                const newQuantity = cartUpdated.reduce((accumulator, item) => {
-                    return accumulator + item.quantity;
-                }, 0);
-                setTotQuantity(newQuantity);
-          }
+            setTotal(newTotal);
+
+            const newQuantity = cartUpdated.reduce((accumulator, item) => {
+                return accumulator + item.quantity;
+            }, 0);
+            setTotQuantity(newQuantity);
+        }
     }
 
     const clearCart = () => {
@@ -51,9 +71,8 @@ export const CartProvider = ({children}) => {
 
     const total = tot;
     const totalCant = totQuantity;
-
     return (
-        <CartContext.Provider value={{cart, addItem, removeItem, clearCart, isInCart, totQuantity, tot, total, totalCant}}>
+        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, isInCart, totQuantity, tot, total, totalCant }}>
             {children}
         </CartContext.Provider>
     )

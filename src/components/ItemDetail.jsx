@@ -7,14 +7,14 @@ import { CartContext } from "./CartContext";
 
 
 export default function ItemDetail({ producto }) {
-    const { nombreProducto, imagen, descripcion, categoria, precio } = producto[0];
+    const {id, nombreProducto, imagen, descripcion, categoria, precio } = producto[0];
 
     const [cantidadAdd, setCantidadAdd] = useState(0);
     const { addItem } = useContext(CartContext);
 
     const handleOnAdd = (cantidadAdd) => {
         setCantidadAdd(cantidadAdd);
-        const item = {nombreProducto, imagen, descripcion, categoria, precio};
+        const item = {id, nombreProducto, imagen, descripcion, categoria, precio};
         addItem(item, cantidadAdd);
     }
 
