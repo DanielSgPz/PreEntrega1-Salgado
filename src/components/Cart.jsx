@@ -7,7 +7,6 @@ import emptyCartSvg from "../assets/img/utilities/cart-cross.svg";
 export default function Cart() {
 
     const { cart, clearCart, totQuantity, tot } = useContext(CartContext);
-    console.log(tot);
 
     if (!totQuantity) {
         return (
